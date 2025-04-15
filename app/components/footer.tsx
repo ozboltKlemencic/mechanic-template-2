@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className='bg-5-custom-footer h-20 flex items-center justify-center'>
       <div className='text-white/70 font-openSans text-center'>
-        <p>
+        <p className='text-xs md:text-sm'>
           © {currentYear} Avtomehanika Demšar, Janez Demšar S.P, vse pravice pridržane.
         </p>
       </div>
