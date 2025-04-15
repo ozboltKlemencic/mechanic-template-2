@@ -232,7 +232,7 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden hero-container" id="hero">
+    <div className="relative h-[100dvh] md:h-screen overflow-hidden hero-container" id="hero">
       {/* Add custom transition styles */}
       <style jsx global>{customStyles}</style>
       
