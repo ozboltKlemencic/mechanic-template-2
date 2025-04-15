@@ -5,8 +5,8 @@ import { poppins, openSans } from './fonts';
 
 
 export const metadata: Metadata = {
-  title: "Avtomehanika Novak 👩‍🔧",
-  description: "Avtomehanična delavnica Novak",
+  title: "Avtomehanika Demšar 👩‍🔧",
+  description: "Avtomehanična delavnica Demšar",
 };
 
 export default function RootLayout({
