@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToHero, scrollToServices, scrollT
           <button className="absolute top-4 right-4 text-white text-3xl" onClick={() => setIsMenuOpen(false)}>
             <IoCloseOutline />
           </button>
-          <ul className="text-white font-poppins text-2xl mt-16 text-center w-full">
+          <ul className="text-white flex flex-col justify-center items-center font-poppins text-2xl mt-16 text-center w-full">
             <li className="py-4">
               <button onClick={() => { scrollToHero(); handleCloseMenu(); }} className="text-white/90">DOMOV</button>
             </li>
