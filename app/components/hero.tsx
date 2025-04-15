@@ -180,7 +180,7 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
                 swiperRef.current.slideToLoop(index);
               }
             }}
-            className={`md:size-3 size-1 rounded-full transition-all duration-300 ease-in-out pagination-button ${
+            className={`md:size-3 size-2 rounded-full transition-all duration-300 ease-in-out pagination-button ${
               activeIndex === index ? "pagination-button-active" : "pagination-button-inactive"
             }`}
             aria-label={`Go to slide ${index + 1}`}
