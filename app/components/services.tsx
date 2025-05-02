@@ -24,34 +24,22 @@ const itemVariants = {
 
 const services = [
   {
-    header: 'MENJAVA AMORTIZERJEV',
-    description: 'Amortizerji so ključni del vzmetenja, vplivajo na udobje vožnje in stabilnost vozila.',
-  },
-  {
-    header: 'MENJAVA KOLEN',
-    description: 'Kolena so bistven del vzmetenja in vplivajo na stabilnost vozila.',
-  },
-  {
-    header: 'MENJAVA ZAVORNIH DISKOV',
-    description: 'Zavorni diski zagotavljajo varno in učinkovito zaviranje vozila.',
+    header: 'SERVIS OSEBNIH VOZIL',
+    description: 'Strokovni servis in vzdrževanje vseh znamk osebnih vozil.',
   },
   {
     header: 'SERVIS KLIMA NAPRAVE',
-    description: 'Pravilno delujoča klima naprava zagotavlja udobje vožnje v vseh letnih časih.',
+    description: 'Polnjenje, vzdrževanje in popravilo klimatskih naprav v vozilih.',
   },
   {
-    header: 'MENJAVA OLJA',
-    description: 'Redna menjava olja zagotavlja dolgotrajno in učinkovito delovanje motorja.',
-  },
-  {
-    header: 'SERVIS ZAVOR',
-    description: 'Preverjanje in servisiranje zavornega sistema zagotavlja varno vožnjo.',
+    header: 'MENJAVA GUM',
+    description: 'Profesionalna menjava in centriranje pnevmatik za vsa vozila.',
   },
 ];
 
 const Services = () => {
   return (
-    <div className="flex items-center justify-center flex-col my-20 w-screen">
+    <div className="flex items-center justify-center flex-col w-screen py-20 bg-sky-100">
       <motion.h1 
         className="text-4xl font-poppins text-black font-bold"
         initial={{ opacity: 0, y: -10 }}
@@ -63,7 +51,7 @@ const Services = () => {
       </motion.h1>
 
       <motion.ul 
-        className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-full md:max-w-[1200px] mx-auto"
+        className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 w-[90%] max-w-[1200px] mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -73,6 +61,7 @@ const Services = () => {
           <motion.li
             key={index}
             variants={itemVariants}
+            className="w-full"
           >
             <ServiceCard header={service.header} description={service.description} />
           </motion.li>

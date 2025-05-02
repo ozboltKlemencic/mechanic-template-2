@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       <div ref={heroRef}>
         <Hero scrollToContact={scrollToContact} /> {/* Pass scrollToContact as a prop */}
       </div>
-      <div className='my-32' ref={servicesRef}>
+      <div className='py-32 bg-sky-100' ref={servicesRef}>
         <Services />
       </div>
       <div ref={contactRef} id="kontakt">

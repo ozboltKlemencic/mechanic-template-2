@@ -24,7 +24,7 @@ const RoundedBtn: React.FC<RoundedBtnProps> = ({ children, onClick, href }) => {
   const buttonContent = (
     <button
       onClick={onClick}
-      className="bg-transparent hover:bg-[#F29135] text-[#F29135] hover:text-white border-2 border-[#F29135] font-medium py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wide"
+      className="bg-transparent hover:bg-sky-100 text-sky-100 hover:text-black border-2 border-sky-100 font-medium py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wide"
     >
       {children}
     </button>
@@ -41,9 +41,9 @@ const RoundedBtn: React.FC<RoundedBtnProps> = ({ children, onClick, href }) => {
 const slides = [
   {
     id: 1,
-    bgImage: '/1.jpg',
-    title: 'AVTOMEHANIKA DEMŠAR, JANEZ DEMŠAR S.P.',
-    description: 'Neodvisno popravljamo in servisiramo vozila Renault izven garancije, komplet vzdrževanje. Zagotavljamo profesionalno storitev in zanesljivost.',
+    bgImage: '/sports-car.jpg',
+    title: 'AVTOMEHANIKA DEMŠAR',
+    description: 'Popravljamo in servisiramo vsa osebna vozila.Zagotavljamo profesionalno storitev in zanesljivost',
     buttonText: 'KONTAKTIRAJ',
     buttonLink: '#kontakt',
   },
@@ -59,7 +59,7 @@ const slides = [
     id: 3,
     bgImage: '/9.jpg',
     title: 'HITRO IN ZANESLJIVO',
-    description: 'Nudimo hitre termine, kvalitetne rezervne dele in garancijo na opravljeno delo. Vedno stremimo k najboljši rešitvi za vaše vozilo in vaš proračun.',
+    description: 'Nudimo hitre termine, kvalitetne rezervne dele in garancijo na opravljeno delo. Vedno stremimo k najboljši rešitvi za vaše vozilo.',
     buttonText: 'KONTAKTIRAJ',
     buttonLink: '#kontakt',
   },
@@ -93,18 +93,19 @@ const customStyles = `
 }
 
 .pagination-button-inactive {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(224, 242, 254, 0.2);
+  border: 1px solid rgba(224, 242, 254, 0.3);
 }
 
 .pagination-button-active {
-  background-color: #F29135;
+  background-color: #e0f2fe;
 }
 
 /* Navigation button hover effect */
 button[aria-label="Previous slide"],
 button[aria-label="Next slide"] {
   transition: opacity 0.3s ease, background-color 0.3s ease, border 0.3s ease;
-  border: 1px solid transparent;
+  border: 2px solid #e0f2fe;
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.1);
   z-index: 20; /* Ensure buttons are visible */
@@ -112,8 +113,8 @@ button[aria-label="Next slide"] {
 
 button[aria-label="Previous slide"]:hover,
 button[aria-label="Next slide"]:hover {
-  background-color: rgba(242, 145, 53, 0.15);
-  border: 1px solid #F29135;
+  background-color: rgba(224, 242, 254, 0.3);
+  border: 2px solid #e0f2fe;
   backdrop-filter: blur(8px);
   box-shadow: none;
 }
@@ -262,58 +263,52 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
         a11y={{ enabled: false }} // Disable a11y to prevent click event conflicts
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={slide.id} className="relative">
-            <div
-              className="relative w-full h-full flex items-center justify-center"
-              style={{
+          <SwiperSlide key={slide.id} className="relative h-full">
+            {/* Background Image with Overlay */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ 
                 backgroundImage: `url(${slide.bgImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                filter: index === 0 ? 'brightness(0.85)' : 'brightness(0.6)',
+                backgroundColor: index === 0 ? 'rgba(0, 0, 0, 0.4)' : 'transparent',
+                backgroundBlendMode: index === 0 ? 'overlay' : 'normal'
               }}
-            >
-              {/* Darkening overlay */}
-              <div className="absolute inset-0 bg-black/50"></div>
-              
-              {/* Content container with AnimatePresence */}
-              <div className="relative z-10 container mx-auto px-4 pt-[120px] flex flex-col items-center text-center">
-                <AnimatePresence mode="wait">
-                  {activeIndex === index && (
-                    <motion.div
-                      key={`content-${slide.id}`}
-                      className="flex flex-col items-center"
-                      variants={contentVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
+            />
+
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-12 z-10">
+              <AnimatePresence mode="wait">
+                {activeIndex === index && (
+                  <motion.div
+                    key={`content-${slide.id}`}
+                    variants={contentVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="text-white text-center max-w-4xl mx-auto"
+                  >
+                    <motion.h1 
+                      variants={itemVariants} 
+                      className="text-3xl md:text-5xl font-poppins font-bold mb-4 text-center"
                     >
-                      {/* Title */}
-                      <motion.h1 
-                        className="text-4xl md:text-5xl font-poppins font-bold mb-6 text-white"
-                        variants={itemVariants}
-                      >
-                        {slide.title}
-                      </motion.h1>
-
-                      {/* Description */}
-                      <motion.p 
-                        className="text-lg md:text-xl mb-10 max-w-4xl text-white/90 font-poppins px-2"
-                        variants={itemVariants}
-                      >
-                        {slide.description}
-                      </motion.p>
-
-                      {/* Button */}
-                      <motion.div
-                        variants={itemVariants}
-                      >
-                        <RoundedBtn onClick={() => handleButtonClick(slide.id)}>
-                          {slide.buttonText}
-                        </RoundedBtn>
-                      </motion.div>
+                      {slide.title}
+                    </motion.h1>
+                    
+                    <motion.p 
+                      variants={itemVariants} 
+                      className="text-lg md:text-xl mb-8 text-center max-w-4xl mx-auto"
+                    >
+                      {slide.description}
+                    </motion.p>
+                    
+                    <motion.div variants={itemVariants} className="flex justify-center">
+                      <RoundedBtn onClick={() => handleButtonClick(slide.id)}>
+                        {slide.buttonText}
+                      </RoundedBtn>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </SwiperSlide>
         ))}
@@ -327,7 +322,7 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
             swiperRef.current.slidePrev();
           }
         }}
-        className="absolute z-20 left-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white hover:bg-[#F29135] transition-all"
+        className="absolute z-20 left-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white bg-transparent border-2 border-sky-100 hover:bg-sky-100/30 transition-all"
         aria-label="Previous slide"
       >
         <IoChevronBack className="h-6 w-6" />
@@ -340,7 +335,7 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
             swiperRef.current.slideNext();
           }
         }}
-        className="absolute z-20 right-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white hover:bg-[#F29135] transition-all"
+        className="absolute z-20 right-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white bg-transparent border-2 border-sky-100 hover:bg-sky-100/30 transition-all"
         aria-label="Next slide"
       >
         <IoChevronForward className="h-6 w-6" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Map from './map';
 import { motion } from 'framer-motion';
-import { CiClock1, CiMail, CiMobile4, CiLocationOn } from "react-icons/ci";
+import { CiClock1, CiMail, CiMobile4, CiLocationOn, CiFileOn } from "react-icons/ci";
 import Link from 'next/link';
 
 const containerVariants = {
@@ -26,8 +26,8 @@ const itemVariants = {
 
 const Contact = () => {
   return (
-    <div className='flex items-center justify-center w-full bg-black/10 py-20'>
-      <div className='grid grid-cols-1 md:grid-cols-[1fr_2fr] max-w-[1200px] w-[90%] md:w-4/5 space-y-14 md:space-y-0'>
+    <div className='flex items-center justify-center w-full   py-20'>
+      <div className='grid grid-cols-1 gap-x-12 gap-y-4 md:grid-cols-[1fr_2fr] max-w-[1200px] w-[90%] md:w-4/5 space-y-14 md:space-y-0'>
         <div>
           <motion.h6 
             className='font-poppins font-bold text-4xl'
@@ -36,22 +36,29 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            KONTAKTI
+            KONTAKT
           </motion.h6>
           
           <motion.div 
-            className='flex flex-col space-y-6 mt-8 font-openSans'
+            className='flex flex-col space-y-6  font-openSans'
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
+            <motion.div variants={itemVariants} className="mt-2">
+              <p className="font-medium text-lg">Avtomehanika Demšar, Demšar Janez s.p.</p>
+             
+            </motion.div>
+            
+            
+            
             <motion.div 
               className='flex space-x-4 items-center justify-start group cursor-pointer'
               variants={itemVariants}
             >
-              <CiClock1 className="text-black text-2xl group-hover:text-[#F29135] transition-all duration-300" />
-              <div className='text-base group-hover:text-[#F29135] transition-all duration-300'>
+              <CiClock1 className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
+              <div className='text-base group-hover:text-sky-400 transition-all duration-300'>
                 <p>Ponedeljek - Petek: 8.00 - 16.00</p>
                 <p>Sobote, nedelje, prazniki: zaprto</p>
               </div>
@@ -59,23 +66,36 @@ const Contact = () => {
             
             <motion.div variants={itemVariants}>
               <Link href="https://www.google.com/maps?q=46.1566253,14.3650522" target="_blank" rel="noopener noreferrer" className='flex space-x-4 items-center justify-start group cursor-pointer'>
-                <CiLocationOn className="text-black text-2xl group-hover:text-[#F29135] transition-all duration-300" />
-                <p className='text-base group-hover:text-[#F29135] transition-all duration-300'>Reteče 22, 4220 Škofja Loka, Slovenija</p>
+                <CiLocationOn className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
+                <p className='text-base group-hover:text-sky-400 transition-all duration-300'>Reteče 22b, 4220 Škofja Loka, Slovenija</p>
               </Link>
             </motion.div>
             
             <motion.div variants={itemVariants}>
               <Link href="tel:+38641970501" className='flex space-x-4 items-center justify-start group cursor-pointer'>
-                <CiMobile4 className="text-black text-2xl group-hover:text-[#F29135] transition-all duration-300" />
-                <p className='text-base group-hover:text-[#F29135] transition-all duration-300'>041 970 501</p>
+                <CiMobile4 className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
+                <p className='text-base group-hover:text-sky-400 transition-all duration-300'>041 970 501</p>
               </Link>
             </motion.div>
             
             <motion.div variants={itemVariants}>
               <Link href="mailto:amdjanez@gmail.com" className='flex space-x-4 items-center justify-start group cursor-pointer'>
-                <CiMail className="text-black text-2xl group-hover:text-[#F29135] transition-all duration-300" />
-                <p className='text-base group-hover:text-[#F29135] transition-all duration-300'>amdjanez@gmail.com</p>
+                <CiMail className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
+                <p className='text-base group-hover:text-sky-400 transition-all duration-300'>amdjanez@gmail.com</p>
               </Link>
+            </motion.div>
+
+            <motion.div 
+              className='flex space-x-4 items-start group cursor-pointer'
+              variants={itemVariants}
+            >
+              <CiFileOn className="text-black text-2xl mt-1 group-hover:text-sky-400 transition-all duration-300" />
+              <div className='text-base group-hover:text-sky-400 transition-all duration-300'>
+                <p>D.št. SI 32021356</p>
+                <p>Matična št. 6684203000</p>
+                <p>Obrtno dovoljenje št.145505/AŠ63-3-455/2014</p>
+                <p>izdano dne 25.09.2014</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -85,7 +105,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="h-[50vh] md:h-[400px]"
+          className="h-[50vh] md:min-h-[500px]"
         >
           <Map />
         </motion.div>

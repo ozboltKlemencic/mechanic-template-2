@@ -9,20 +9,20 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ header, description }) => {
   return (
     <motion.div 
-      className="border border-black/15 rounded-md px-6 py-11 w-full max-w-[90%] md:max-w-[380px] bg-gray-400/5 mx-auto group"
+      className="border-2 border-neutral-400 hover:border-sky-200 rounded-md px-6 py-12 w-full h-full bg-white shadow-md mx-auto group"
       whileHover={{ 
-        borderColor: '#F29135', 
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        y: -3
+      
+        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
+        y: -2
       }}
       transition={{ duration: 0.2 }}
     >
       <h3 
-        className="font-poppins font-bold text-lg text-black/80 text-center mb-3 transition-colors duration-200 group-hover:text-[#F29135]"
+        className="font-poppins font-bold text-xl text-black/90 text-center mb-4 transition-colors duration-200 group-hover:text-sky-400"
       >
         {header}
       </h3>
-      <p className="font-openSans text-sm text-center text-black/75">{description}</p>
+      <p className="font-openSans text-base text-center text-black/80">{description}</p>
     </motion.div>
   );
 };
