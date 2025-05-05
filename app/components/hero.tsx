@@ -24,7 +24,8 @@ const RoundedBtn: React.FC<RoundedBtnProps> = ({ children, onClick, href }) => {
   const buttonContent = (
     <button
       onClick={onClick}
-      className="bg-transparent backdrop-filter backdrop-blur-md bg-white/10 hover:bg-[#4169E1] text-white hover:text-white border-2 border-[#4169E1] font-medium py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wide"
+      style={{ willChange: 'backdrop-filter' }}
+      className="bg-white/10 backdrop-filter  backdrop-blur-md  hover:bg-[#4169E1] text-white hover:text-white border-2 border-[#4169E1] font-medium py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wide"
     >
       {children}
     </button>
