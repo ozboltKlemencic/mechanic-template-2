@@ -57,8 +57,8 @@ const Contact = () => {
               className='flex space-x-4 items-center justify-start group cursor-pointer'
               variants={itemVariants}
             >
-              <CiClock1 className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
-              <div className='text-base group-hover:text-sky-400 transition-all duration-300'>
+              <CiClock1 className="text-black text-2xl group-hover:text-[#4169E1] transition-all duration-300" />
+              <div className='text-base group-hover:text-[#4169E1] transition-all duration-300'>
                 <p>Ponedeljek - Petek: 8.00 - 16.00</p>
                 <p>Sobote, nedelje, prazniki: zaprto</p>
               </div>
@@ -66,22 +66,22 @@ const Contact = () => {
             
             <motion.div variants={itemVariants}>
               <Link href="https://www.google.com/maps?q=46.1566253,14.3650522" target="_blank" rel="noopener noreferrer" className='flex space-x-4 items-center justify-start group cursor-pointer'>
-                <CiLocationOn className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
-                <p className='text-base group-hover:text-sky-400 transition-all duration-300'>Reteče 22b, 4220 Škofja Loka, Slovenija</p>
+                <CiLocationOn className="text-black text-2xl group-hover:text-[#4169E1] transition-all duration-300" />
+                <p className='text-base group-hover:text-[#4169E1] transition-all duration-300'>Reteče 22b, 4220 Škofja Loka, Slovenija</p>
               </Link>
             </motion.div>
             
             <motion.div variants={itemVariants}>
               <Link href="tel:+38641970501" className='flex space-x-4 items-center justify-start group cursor-pointer'>
-                <CiMobile4 className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
-                <p className='text-base group-hover:text-sky-400 transition-all duration-300'>041 970 501</p>
+                <CiMobile4 className="text-black text-2xl group-hover:text-[#4169E1] transition-all duration-300" />
+                <p className='text-base group-hover:text-[#4169E1] transition-all duration-300'>041 970 501</p>
               </Link>
             </motion.div>
             
             <motion.div variants={itemVariants}>
               <Link href="mailto:amdjanez@gmail.com" className='flex space-x-4 items-center justify-start group cursor-pointer'>
-                <CiMail className="text-black text-2xl group-hover:text-sky-400 transition-all duration-300" />
-                <p className='text-base group-hover:text-sky-400 transition-all duration-300'>amdjanez@gmail.com</p>
+                <CiMail className="text-black text-2xl group-hover:text-[#4169E1] transition-all duration-300" />
+                <p className='text-base group-hover:text-[#4169E1] transition-all duration-300'>amdjanez@gmail.com</p>
               </Link>
             </motion.div>
 
@@ -89,8 +89,8 @@ const Contact = () => {
               className='flex space-x-4 items-start group cursor-pointer'
               variants={itemVariants}
             >
-              <CiFileOn className="text-black text-2xl mt-1 group-hover:text-sky-400 transition-all duration-300" />
-              <div className='text-base group-hover:text-sky-400 transition-all duration-300'>
+              <CiFileOn className="text-black text-2xl mt-1 group-hover:text-[#4169E1]transition-all duration-300" />
+              <div className='text-base group-hover:text-[#4169E1] transition-all duration-300'>
                 <p>D.št. SI 32021356</p>
                 <p>Matična št. 6684203000</p>
                 <p>Obrtno dovoljenje št.145505/AŠ63-3-455/2014</p>

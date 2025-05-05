@@ -36,10 +36,13 @@ const Home: React.FC = () => {
       <div ref={heroRef}>
         <Hero scrollToContact={scrollToContact} /> {/* Pass scrollToContact as a prop */}
       </div>
-      <div className='py-32 bg-sky-100' ref={servicesRef}>
+      <div className='py-32 ' style={{ 
+        background: '#5e83f2',
+        backgroundImage: 'linear-gradient(178deg,rgba(94, 131, 242, 0.33) 1%, rgba(39, 87, 230, 0.65) 50%, rgba(65, 105, 225, 0.37) 100%)'
+      }} ref={servicesRef}>
         <Services />
-      </div>
-      <div ref={contactRef} id="kontakt">
+      </div> 
+      <div ref={contactRef} id="kontakt"> 
         <Contact />
       </div>
       <Footer />

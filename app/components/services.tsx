@@ -39,9 +39,9 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="flex items-center justify-center flex-col w-screen py-20 bg-sky-100">
+    <div className="flex items-center justify-center flex-col w-screen py-20">
       <motion.h1 
-        className="text-4xl font-poppins text-black font-bold"
+        className="text-4xl font-poppins text-white font-bold"
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

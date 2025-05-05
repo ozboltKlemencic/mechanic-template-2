@@ -24,7 +24,7 @@ const RoundedBtn: React.FC<RoundedBtnProps> = ({ children, onClick, href }) => {
   const buttonContent = (
     <button
       onClick={onClick}
-      className="bg-transparent hover:bg-sky-100 text-sky-100 hover:text-black border-2 border-sky-100 font-medium py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wide"
+      className="bg-transparent backdrop-filter backdrop-blur-md bg-white/10 hover:bg-[#4169E1] text-white hover:text-white border-2 border-[#4169E1] font-medium py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wide"
     >
       {children}
     </button>
@@ -93,19 +93,19 @@ const customStyles = `
 }
 
 .pagination-button-inactive {
-  background-color: rgba(224, 242, 254, 0.2);
-  border: 1px solid rgba(224, 242, 254, 0.3);
+  background-color: rgba(65, 105, 225, 0.2);
+  border: 1px solid rgba(65, 105, 225, 0.3);
 }
 
 .pagination-button-active {
-  background-color: #e0f2fe;
+  background-color: #4169E1;
 }
 
 /* Navigation button hover effect */
 button[aria-label="Previous slide"],
 button[aria-label="Next slide"] {
   transition: opacity 0.3s ease, background-color 0.3s ease, border 0.3s ease;
-  border: 2px solid #e0f2fe;
+  border: 2px solid #4169E1;
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.1);
   z-index: 20; /* Ensure buttons are visible */
@@ -113,8 +113,8 @@ button[aria-label="Next slide"] {
 
 button[aria-label="Previous slide"]:hover,
 button[aria-label="Next slide"]:hover {
-  background-color: rgba(224, 242, 254, 0.3);
-  border: 2px solid #e0f2fe;
+  background-color: rgba(65, 105, 225, 0.3);
+  border: 2px solid #4169E1;
   backdrop-filter: blur(8px);
   box-shadow: none;
 }
@@ -269,9 +269,9 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ 
                 backgroundImage: `url(${slide.bgImage})`,
-                filter: index === 0 ? 'brightness(0.85)' : 'brightness(0.6)',
-                backgroundColor: index === 0 ? 'rgba(0, 0, 0, 0.4)' : 'transparent',
-                backgroundBlendMode: index === 0 ? 'overlay' : 'normal'
+                filter: 'brightness(0.7)',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundBlendMode: 'overlay'
               }}
             />
 
@@ -322,7 +322,7 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
             swiperRef.current.slidePrev();
           }
         }}
-        className="absolute z-20 left-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white bg-transparent border-2 border-sky-100 hover:bg-sky-100/30 transition-all"
+        className="absolute z-20 left-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white bg-transparent border-2 border-[#4169E1] hover:bg-[#4169E1]/30 transition-all"
         aria-label="Previous slide"
       >
         <IoChevronBack className="h-6 w-6" />
@@ -335,7 +335,7 @@ export default function Hero({ scrollToContact, scrollToServices }: HeroProps) {
             swiperRef.current.slideNext();
           }
         }}
-        className="absolute z-20 right-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white bg-transparent border-2 border-sky-100 hover:bg-sky-100/30 transition-all"
+        className="absolute z-20 right-4 top-1/2 -translate-y-1/2 rounded-full p-3 text-white bg-transparent border-2 border-[#4169E1] hover:bg-[#4169E1]/30 transition-all"
         aria-label="Next slide"
       >
         <IoChevronForward className="h-6 w-6" />

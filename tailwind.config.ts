@@ -17,6 +17,7 @@ const config: Config = {
         "5-custom-navbar": "rgb(47, 53, 58)",
         "5-custom-footer": "rgb(47, 53, 58)",
         "5-custom-orange": "#e0f2fe",
+        "5-custom-blue": "#4169E1",
       },
       fontFamily: {
         // template 5
