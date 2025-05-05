@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToHero, scrollToServices, scrollT
   return (
     <nav
       className={`fixed w-full top-0 left-0 h-20 z-10 transition-all duration-300 flex items-center justify-center 
-        ${isScrolled ? "bg-5-custom-navbar h-20" : "bg-transparent h-24"}`}
+        ${isScrolled ? "bg-bg-5-custom-footer h-20" : "bg-transparent h-24"}`}
     >
       <div className="w-[1300px] h-full flex items-center justify-between px-4">
         <div>
