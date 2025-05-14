@@ -7,6 +7,9 @@ import { poppins, openSans } from './fonts';
 export const metadata: Metadata = {
   title: "Avtomehanika Demšar 👩‍🔧",
   description: "Avtomehanična delavnica Demšar",
+  verification: {
+    google: "q2ZDyhgy7nmFS0rJ5wg2e03DrV_n0hjnaFIB3cFC5Fo",
+  },
 };
 
 export default function RootLayout({

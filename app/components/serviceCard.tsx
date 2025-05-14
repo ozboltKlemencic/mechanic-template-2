@@ -9,7 +9,7 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ header, description }) => {
   return (
     <motion.div 
-      className="border-2 border-neutral-400 hover:border-[#4169E1] rounded-md px-6 py-12 w-full h-full bg-white shadow-md mx-auto group"
+      className="border-2 border-neutral-400  rounded-md px-6 py-12 w-full h-full bg-white shadow-md mx-auto group transition-all duration-300"
       whileHover={{ 
       
         boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
